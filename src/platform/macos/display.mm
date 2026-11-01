@@ -119,6 +119,7 @@ namespace platf {
         img_out->height = (int) CVPixelBufferGetHeight(new_pixel_buffer->buf);
         img_out->row_pitch = (int) CVPixelBufferGetBytesPerRow(new_pixel_buffer->buf);
         img_out->pixel_pitch = img_out->row_pitch / img_out->width;
+        img_out->frame_timestamp = std::chrono::steady_clock::now();
 
         old_data_retainer = nullptr;
 
