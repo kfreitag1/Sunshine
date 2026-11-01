@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import Checkbox from "../../../Checkbox.vue";
 const props = defineProps({
   platform: String,
   config: Object,
@@ -8,6 +9,14 @@ const config = ref(props.config)
 </script>
 
 <template>
+  <!--force_1440p60-->
+  <Checkbox class="mb-3"
+            id="force_1440p60"
+            locale-prefix="config"
+            v-model="config.force_1440p60"
+            default="false"
+  ></Checkbox>
+
   <!--max_bitrate-->
   <div class="mb-3">
     <label for="max_bitrate" class="form-label">{{ $t("config.max_bitrate") }}</label>

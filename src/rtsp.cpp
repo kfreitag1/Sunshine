@@ -1145,6 +1145,10 @@ namespace rtsp_stream {
           config.monitor.framerateX100 = 0;
         }
       }
+      if (config::video.force_1440p60) {
+        BOOST_LOG(info) << "Forcing 1440p60: requested "sv << config.monitor.width << 'x' << config.monitor.height << '@' << config.monitor.framerate;
+        video::force_1440p60(config.monitor);
+      }
       config.monitor.bitrate = (int) util::from_view(args.at("x-nv-vqos[0].bw.maximumBitrateKbps"sv));
       config.monitor.slicesPerFrame = (int) util::from_view(args.at("x-nv-video[0].videoEncoderSlicesPerFrame"sv));
       config.monitor.numRefFrames = (int) util::from_view(args.at("x-nv-video[0].maxNumReferenceFrames"sv));

@@ -701,6 +701,13 @@ namespace video {
   config_t resolve_dynamic_range(const encoder_t &encoder, config_t config);
 
   /**
+   * @brief Replace a stream configuration with 2560x1440 at 60 fps.
+   *
+   * @param config Encoding configuration requested by the remote client.
+   */
+  void force_1440p60(config_t &config);
+
+  /**
    * @brief Clear all published encoder probe results.
    */
   void reset_encoder_probe_results();

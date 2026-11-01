@@ -167,6 +167,13 @@ namespace video {
    * @param config Client-requested stream configuration.
    * @return Effective stream configuration, downgraded to SDR when HDR is unsupported.
    */
+  void force_1440p60(config_t &config) {
+    config.width = 2560;
+    config.height = 1440;
+    config.framerate = 60;
+    config.framerateX100 = 6000;
+  }
+
   config_t resolve_dynamic_range(const encoder_t &encoder, config_t config) {
     if (!config.dynamicRange) {
       return config;

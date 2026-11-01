@@ -1544,6 +1544,29 @@ consent prompt for directory ACLs, so the Web UI shows setup steps for correctin
     </tr>
 </table>
 
+### force_1440p60
+
+<table>
+    <tr>
+        <td>Description</td>
+        <td colspan="2">
+            Replace the resolution and frame rate requested by the client with 2560x1440 at 60 fps. Use it when the host cannot encode the requested mode at the target frame rate, such as 4K60 on a Mac.
+        </td>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td colspan="2">@code{}
+            disabled
+            @endcode</td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td colspan="2">@code{}
+            force_1440p60 = enabled
+            @endcode</td>
+    </tr>
+</table>
+
 ## Network
 
 ### upnp

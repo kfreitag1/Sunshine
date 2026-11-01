@@ -540,3 +540,23 @@ TEST(SoftwareEncoderConversion, Bgr0AndNv12) {
   fallback_nv12_img.row_pitch = w;
   EXPECT_EQ(device.convert(fallback_nv12_img), 0);
 }
+
+/**
+ * @brief The 1440p60 override replaces the requested resolution and frame rate only.
+ */
+TEST(VideoForce1440p60Test, ReplacesResolutionAndFrameRate) {
+  video::config_t config {3840, 2160, 120, 12000, 80000, 1, 1, 0, 1, 0, 0, 0};
+  video::force_1440p60(config);
+  EXPECT_EQ(config.width, 2560);
+  EXPECT_EQ(config.height, 1440);
+  EXPECT_EQ(config.framerate, 60);
+  EXPECT_EQ(config.framerateX100, 6000);
+  EXPECT_EQ(config.bitrate, 80000);
+  EXPECT_EQ(config.slicesPerFrame, 1);
+  EXPECT_EQ(config.numRefFrames, 1);
+  EXPECT_EQ(config.encoderCscMode, 0);
+  EXPECT_EQ(config.videoFormat, 1);
+  EXPECT_EQ(config.dynamicRange, 0);
+  EXPECT_EQ(config.chromaSamplingType, 0);
+  EXPECT_EQ(config.enableIntraRefresh, 0);
+}
