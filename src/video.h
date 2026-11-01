@@ -708,6 +708,13 @@ namespace video {
   void force_1440p60(config_t &config);
 
   /**
+   * @brief Replace a stream configuration with 3584x2016 at 60 fps.
+   *
+   * @param config Encoding configuration requested by the remote client.
+   */
+  void force_max60(config_t &config);
+
+  /**
    * @brief Clear all published encoder probe results.
    */
   void reset_encoder_probe_results();

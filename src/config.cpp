@@ -818,7 +818,8 @@ namespace config {
 
     0,  // max_bitrate
     0,  // minimum_fps_target (0 = framerate)
-    false  // force_1440p60
+    false,  // force_1440p60
+    false  // force_max60
   };
 
   /**
@@ -1757,6 +1758,7 @@ namespace config {
     int_f(vars, "max_bitrate", video.max_bitrate);
     double_between_f(vars, "minimum_fps_target", video.minimum_fps_target, {0.0, 1000.0});
     bool_f(vars, "force_1440p60", video.force_1440p60);
+    bool_f(vars, "force_max60", video.force_max60);
 
     path_f(vars, "pkey", nvhttp.pkey);
     path_f(vars, "cert", nvhttp.cert);

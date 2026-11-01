@@ -174,6 +174,13 @@ namespace video {
     config.framerateX100 = 6000;
   }
 
+  void force_max60(config_t &config) {
+    config.width = 3584;
+    config.height = 2016;
+    config.framerate = 60;
+    config.framerateX100 = 6000;
+  }
+
   config_t resolve_dynamic_range(const encoder_t &encoder, config_t config) {
     if (!config.dynamicRange) {
       return config;

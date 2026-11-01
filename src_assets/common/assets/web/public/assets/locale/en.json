@@ -320,6 +320,8 @@
     "log_path_desc": "The file where the current Sunshine log is stored. At startup, up to five previous logs are retained with .1 through .5 suffixes.",
     "force_1440p60": "Force 1440p60",
     "force_1440p60_desc": "Overrides Moonlight's requested resolution and frame rate with 2560x1440 at 60 fps. Use it when 4K60 encoding cannot keep up.",
+    "force_max60": "Max 60 fps (3584x2016)",
+    "force_max60_desc": "Overrides Moonlight's requested resolution and frame rate with 3584x2016 at 60 fps, about 7% smaller than 4K in each dimension. Takes precedence over Force 1440p60.",
     "max_bitrate": "Maximum Bitrate",
     "max_bitrate_desc": "The maximum bitrate (in Kbps) that Sunshine will encode the stream at. If set to 0, it will always use the bitrate requested by Moonlight.",
     "minimum_fps_target": "Minimum FPS Target",

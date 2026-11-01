@@ -1567,6 +1567,29 @@ consent prompt for directory ACLs, so the Web UI shows setup steps for correctin
     </tr>
 </table>
 
+### force_max60
+
+<table>
+    <tr>
+        <td>Description</td>
+        <td colspan="2">
+            Replace the resolution and frame rate requested by the client with 3584x2016 at 60 fps, about 7% smaller than 4K in each dimension. Use it when the host cannot hold 60 fps at 4K but you want more detail than 1440p. Takes precedence over <code>force_1440p60</code>.
+        </td>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td colspan="2">@code{}
+            disabled
+            @endcode</td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td colspan="2">@code{}
+            force_max60 = enabled
+            @endcode</td>
+    </tr>
+</table>
+
 ## Network
 
 ### upnp

@@ -61,7 +61,8 @@
       },
       "max_bitrate": 0,
       "minimum_fps_target": 0,
-      "force_1440p60": "disabled"
+      "force_1440p60": "disabled",
+      "force_max60": "disabled"
     }
   },
   {

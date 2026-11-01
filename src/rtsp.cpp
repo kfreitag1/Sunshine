@@ -1145,7 +1145,13 @@ namespace rtsp_stream {
           config.monitor.framerateX100 = 0;
         }
       }
-      if (config::video.force_1440p60) {
+      if (config::video.force_max60) {
+        if (config::video.force_1440p60) {
+          BOOST_LOG(warning) << "force_max60 and force_1440p60 are both enabled; using force_max60"sv;
+        }
+        BOOST_LOG(info) << "Forcing max 60: requested "sv << config.monitor.width << 'x' << config.monitor.height << '@' << config.monitor.framerate;
+        video::force_max60(config.monitor);
+      } else if (config::video.force_1440p60) {
         BOOST_LOG(info) << "Forcing 1440p60: requested "sv << config.monitor.width << 'x' << config.monitor.height << '@' << config.monitor.framerate;
         video::force_1440p60(config.monitor);
       }

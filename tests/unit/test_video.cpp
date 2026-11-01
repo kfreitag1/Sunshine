@@ -560,3 +560,23 @@ TEST(VideoForce1440p60Test, ReplacesResolutionAndFrameRate) {
   EXPECT_EQ(config.chromaSamplingType, 0);
   EXPECT_EQ(config.enableIntraRefresh, 0);
 }
+
+/**
+ * @brief The max-60 override replaces the requested resolution and frame rate only.
+ */
+TEST(VideoForceMax60Test, ReplacesResolutionAndFrameRate) {
+  video::config_t config {3840, 2160, 120, 12000, 80000, 1, 1, 0, 1, 0, 0, 0};
+  video::force_max60(config);
+  EXPECT_EQ(config.width, 3584);
+  EXPECT_EQ(config.height, 2016);
+  EXPECT_EQ(config.framerate, 60);
+  EXPECT_EQ(config.framerateX100, 6000);
+  EXPECT_EQ(config.bitrate, 80000);
+  EXPECT_EQ(config.slicesPerFrame, 1);
+  EXPECT_EQ(config.numRefFrames, 1);
+  EXPECT_EQ(config.encoderCscMode, 0);
+  EXPECT_EQ(config.videoFormat, 1);
+  EXPECT_EQ(config.dynamicRange, 0);
+  EXPECT_EQ(config.chromaSamplingType, 0);
+  EXPECT_EQ(config.enableIntraRefresh, 0);
+}
