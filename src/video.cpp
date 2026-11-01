@@ -1409,7 +1409,6 @@ namespace video {
         {"require_sw"s, &config::video.vt.vt_require_sw},
         {"realtime"s, &config::video.vt.vt_realtime},
         {"prio_speed"s, 1},
-        {"max_ref_frames"s, 1},
       },
       {},  // SDR-specific options
       {},  // HDR-specific options
